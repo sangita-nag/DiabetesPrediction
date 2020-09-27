@@ -30,13 +30,13 @@ def predict():
     
     predString = ""
     
-    if prediction == 0:
+    if prediction[0] == 0:
         predString = "Non-Diabetic"
     else:
         predString = "Diabetic"
     
 
-    return render_template('index.html', prediction_text='Diabetic or not)  {}'.format(prediction[0]))
+    return render_template('index.html', prediction_text='Diabetic or not:  {}'.format(predString))
 
 
 if __name__ == "__main__":
