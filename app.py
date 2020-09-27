@@ -27,10 +27,16 @@ def predict():
        
     featureArray = np.array([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
     prediction = model.predict(featureArray)
-
+    
+    predString = ""
+    
+    if prediction == 0:
+        predString = "Non-Diabetic"
+    else:
+        predString = "Diabetic"
     
 
-    return render_template('index.html', prediction_text='Diabetes present or not: 0 -> Not Present and 1 -> Present)  $ {}'.format(prediction[0]))
+    return render_template('index.html', prediction_text='Diabetic or not)  {}'.format(prediction[0]))
 
 
 if __name__ == "__main__":
